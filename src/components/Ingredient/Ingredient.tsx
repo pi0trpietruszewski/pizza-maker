@@ -1,5 +1,11 @@
 import React from 'react';
-import {Image, useWindowDimensions} from 'react-native';
+import {
+  Image,
+  ImageURISource,
+  StyleSheet,
+  useWindowDimensions,
+} from 'react-native';
+import {styles} from './styles';
 import {
   DoughType,
   IngredientImages,
@@ -14,6 +20,9 @@ interface Props {
 export const Ingredient = ({name}: Props) => {
   const {width} = useWindowDimensions();
   return (
-    <Image source={IngredientImages[name]} style={{width, aspectRatio: 1}} />
+    <Image
+      source={IngredientImages[name] as ImageURISource}
+      style={StyleSheet.flatten([{width}, styles.image])}
+    />
   );
 };

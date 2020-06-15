@@ -1,6 +1,7 @@
 import React from 'react';
-import {ScrollView, StyleSheet} from 'react-native';
+import {ScrollView} from 'react-native';
 import {Ingredient} from 'src/components/Ingredient/Ingredient';
+import {styles} from './styles';
 import {
   Ingredients,
   IngredientsTypes,
@@ -12,13 +13,6 @@ import {
 interface Props {
   type?: IngredientsTypes;
 }
-
-const styles = StyleSheet.create({
-  scrollViewWrapper: {
-    alignItems: 'center',
-  },
-  scrollView: {height: '100%'},
-});
 
 export const IngredientScroll = ({type = 'dough'}: Props) => {
   return (
